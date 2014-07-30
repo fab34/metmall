@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="format-detection" content="telephone=no" />
+<title>東森購物網</title>
+<link rel="shortcut icon" href="http://www.u-mall.com.tw/Images/favicon.ico" />
+<link rel="apple-touch-icon" href="http://www.u-mall.com.tw/Mobile/images/touch-icon-iphone.png" />
+<link rel="apple-touch-icon" sizes="72x72" href="http://www.u-mall.com.tw/Mobile/images/touch-icon-ipad.png" />
+<link rel="apple-touch-icon" sizes="114x114" href="http://www.u-mall.com.tw/Mobile/images/touch-icon-iphone4.png" />
+<link rel="apple-touch-icon-precomposed" href="http://www.u-mall.com.tw/Mobile/images/touch-icon-iphone.png" />
+<link rel="stylesheet" type="text/css" href="css/mobile.css">
+<script src="http://www.u-mall.com.tw/Include/js/New/jquery-1.10.2.min.js" type="text/javascript"></script>
+<script src="http://www.u-mall.com.tw/mobile/jscb/zepto.min.js" type="text/javascript"></script>
+<script src="http://www.u-mall.com.tw/mobile/jscb/iscroll-lite.js" type="text/javascript"></script>
+<script src="http://www.u-mall.com.tw/mobile/jscb/umallmobile.js" type="text/javascript"></script>
+<link href="http://www.u-mall.com.tw/Mobile/css/jquery.autocomplete.css" rel="stylesheet" type="text/css" />
+<script src="http://www.u-mall.com.tw/Include/js/jquery.autocomplete.js" type="text/javascript"></script>
+<script src="http://www.u-mall.com.tw/Include/js/XmlHelper.js" type="text/javascript"></script>
+<script src="http://www.u-mall.com.tw/mobile/js/Prod.Mobile.js" type="text/javascript"></script>
+<script type="text/javascript">
+	//    var startTime = new Date(),
+	//    endTime = new Date(2014, 0, 30, 00, 00, 00), //年,月(0~11;0為1月),日(1~31),時,分,秒
+	//    spanTime = (endTime.getTime() - startTime.getTime()) / 1000;
+	var now = new Date();
+	var spanTime = ( 1392170400000  - now.getTime()) / 1000;
+
+	function clock() {
+		spanTime--;
+		var //d = Math.floor(spanTime / (24 * 3600)),
+		//h = Math.floor(spanTime % (24 * 3600) / 3600),
+		h = Math.floor(spanTime / 3600),
+		m = Math.floor(spanTime % 3600 / 60),
+		s = Math.floor(spanTime % 60);
+		if (spanTime > 0) {
+			//$("#day").text(d);
+			$("#hor").text(h);
+			$("#min").text(m);
+			$("#sec").text(s);
+		} else {
+			//$("#day").text(0);
+			$("#hor").text(0);
+			$("#min").text(0);
+			$("#sec").text(0);
+		};
+		setTimeout("clock()", 1000);
+	}
+	$(window).load(function () {
+		clock();
+	});
+
+	$(document).ready(function () {
+		$("#btnBuy").bind('click', function (e) {
+			var sc = $(this).attr("sc");
+			 location.href = "/mobile/Prod.aspx?sc=" + sc;
+		});
+	});
+
+	//收藏我
+	function CollectMe(sc) {
+		var controlKey =$('#Prod_ContentUC1_ControlKey').val();
+		$.ajax({
+			url: "/Controller/setForwardProductCollectCtr.aspx",
+			data: GetXMLParameter({ mode: "collect", cok: '', saleCode: jQuery.trim(sc), tag: '' }),
+			async: false,
+			success: function (obj) {
+				if (obj != null) {
+					if (obj.result != "True") {
+						if (obj.returnMessage.indexOf("登入") > -1) {
+							PopupMsgBox('提醒您', obj.returnMessage, function () { RedirectToLoginPage(); });
+						} else if (obj.returnMessage.indexOf("收藏成功") > -1) {
+							window.location.href = '/Mobile/Pages/UserInformation/ProductWish.aspx';
+
+							//ConfirmMsgBox('提醒您', "收藏成功，是否立即前往收藏頁?", GotoProductWish, "前往");
+						} else {
+							PopupMsgBox('提醒您', obj.returnMessage);
+						}
+						if (obj.redirectPage != null && obj.redirectPage != "") {
+							location.href = obj.redirectPage;
+						}
+					}
+					else {
+						window.location.href = '/Mobile/Pages/UserInformation/ProductWish.aspx';
+						//ConfirmMsgBox('提醒您', "收藏成功，是否立即前往收藏頁?", GotoProductWish, "前往");
+					}
+				}
+				else{
+				alert(1);
+				}
+			}
+		});
+	}
+	function RedirectToLoginPage() {
+		window.location.href = '/Mobile/Login.aspx?fromUrl=' + escape(window.location.href);
+	}
+</script>
+</head>
+<body>
+	
+	<div class="page">
+		<div class="main">
+			
+		<div class="headerZone">
+			<div class="header t_center f_20 f_w">
+				<a href="/" target="_self">東森購物網</a>
+				<div class="header_btn_left"></div>
+				<div class="header_btn_right"></div>
+			</div>
+			
+		</div>
+
+	<script type="text/javascript">
+		var addToHomeConfig = { animationIn: 'bubble', animationOut: 'bubble', returningVisitor: true, expire: 720 };
+
+		var KwLimit = function () {
+			if ($('#txtSearchKeyword').val().length < 1 || $('#txtSearchKeyword').val().length > 96) {
+			}
+			else {
+				var qstring = "";
+				if ($('#txtSearchKeyword').val() != $('#txtSearchKeyword').attr('placeholder')) {
+					qstring = "/Mobile/Search.aspx?keyword=" + encodeURIComponent($('#txtSearchKeyword').val());
+				}
+				else {
+					qstring = "/Mobile/Search.aspx?keyword=" + qstring;
+				}
+				window.location = qstring;
+			}
+		}
+	</script>
+
+			<div id="wrapper">
+				<div class="mainWrap">
+					<div class="main_search">
+						<input type="text" id="txtSearchKeyword" name="txtSearchKeyword" class="search_bar" maxlength="96" placeholder="請輸入關鍵字">
+						<div class="search_input f_15">
+							<a href="javascript:KwLimit();">搜尋</a>
+						</div>
+					</div>
+
+					<div class="path" id="path2">
+						<a href="/" target="_self">首頁</a> > 天天有折扣
+					</div>
+					<!--End path-->
+					<div class="block">
+						<div class="countdown">
+							<div class="countdown_left">
+								<div class="countdown_content f_w">
+									<p>剩餘時間</p>
+									<!--<div id="day"></div>天-->
+									<div id="hor"></div>小時
+									<div id="min"></div>分
+									<div id="sec"></div>秒
+								</div><!--End countdown_content-->
+								<p class="countdown_discounts t_center f_w"><span class="f_26">25</span>折</p>
+								<a href="/mobile/Prod.aspx?sc=00527752" class="p_img"><img src="http://img2.u-mall.com.tw/UserFiles/Product/00527/00527752/00527752_L.jpg"></a>
+								<ul>
+									<li>原價<span>$3,000,000</span></li>
+									<li>現省<span>$200,000</span></li>
+									<p class="t_center">驚爆價<span class="cdprice">$<span>2,800,000</span></span></p>
+								</ul>
+								<div class="clear"></div>
+								<input id="btnBuy" class="t_center f_20" type="button" value="立即搶購" name="搶購" sc="00527752">
+							</div>
+							<div class="countdown_right">
+								<p class="countdown_time t_center">搶購時段02/11 AM10:00 ~02/12 AM10:00</p><p>(超值福袋3入)Belvia貝薇雅纖體背心(黑)+塑褲(紫、膚)</p>
+								<p class="countdown_detail">2014獨家組合 纖體背心x1+塑褲x2 眾多藝人 強力推薦獨創高透氣機能塑身無痕內衣再進化零著感 親膚性極佳</p>
+							</div><!--End countdown_right-->
+						</div>
+						<div class="clear"></div>
+						<!--End countdown-->
+						<ul class="product_groups product_groups_d"><li class="w_190 b_1px bg_w f_r left">	<div class="f_w countdown_discounts_s t_center">97折</div>	<a href="/mobile/Prod.aspx?sc=00474955" class="p_img"><img src="http://img2.u-mall.com.tw/UserFiles/Product/00474/00474955/00474955_M.jpg"></a>    <a href="/mobile/Prod.aspx?sc=00474955"><div class="text_overflow">幸運草 浪漫日記 純金+925純銀雙面項鍊(女) (預購) </div></a>    <div class="price_div"><a href="/mobile/Prod.aspx?sc=00474955"><div class="price_symbol">驚爆 $ </div> 3,500</a></div></li><li class="w_190 b_1px bg_w f_r left">	<div class="f_w countdown_discounts_s t_center">74折</div>	<a href="/mobile/Prod.aspx?sc=00483355" class="p_img"><img src="http://img2.u-mall.com.tw/UserFiles/Product/00483/00483355/00483355_M.jpg"></a>    <a href="/mobile/Prod.aspx?sc=00483355"><div class="text_overflow">溫馨抽取式衛生紙100抽x100包/1箱 </div></a>    <div class="price_div"><a href="/mobile/Prod.aspx?sc=00483355"><div class="price_symbol">驚爆 $ </div> 590</a></div></li><li class="w_190 b_1px bg_w f_r left">	<div class="f_w countdown_discounts_s t_center">33折</div>	<a href="/mobile/Prod.aspx?sc=00509350" class="p_img"><img src="http://img2.u-mall.com.tw/UserFiles/Product/00509/00509350/00509350_M.jpg"></a>    <a href="/mobile/Prod.aspx?sc=00509350"><div class="text_overflow">【PQI】勁永 i-Power Bank 7800mAh 行動電源(黑/白) </div></a>    <div class="price_div"><a href="/mobile/Prod.aspx?sc=00509350"><div class="price_symbol">驚爆 $ </div> 488</a></div></li><li class="w_190 b_1px bg_w f_r left">	<div class="f_w countdown_discounts_s t_center">79折</div>	<a href="/mobile/Prod.aspx?sc=00526765" class="p_img"><img src="http://img2.u-mall.com.tw/UserFiles/Product/00526/00526765/00526765_M.jpg"></a>    <a href="/mobile/Prod.aspx?sc=00526765"><div class="text_overflow">《聖祖貢糖》原味貢糖5包入(12入/包)-網 </div></a>    <div class="price_div"><a href="/mobile/Prod.aspx?sc=00526765"><div class="price_symbol">驚爆 $ </div> 475</a></div></li>
+						</ul>
+						<!--End product_groups-->
+						<div class="clear"></div>
+					</div>
+					<!--End block-->
+					
+<div class="copyright">
+	<a href="/mobile/Pages/Marketing/Discount.aspx?sc=00527752&nomo=1" data-ajax="false">電腦版</a> <span>&nbsp;|</span>
+	<a href="/Mobile/Pages/UserGuide/NewUser.aspx?g=2" data-ajax="false">服務條款</a> <span>&nbsp;|</span>
+	<a href="/Mobile/Pages/UserGuide/NewUser.aspx?g=3" data-ajax="false">隱私權政策</a><br />
+	東森百貨股份有限公司 版權所有
+</div>
+
+				</div>
+			</div>
+		</div>
+		
+	<div class="side sideLeft">
+		<div class="panel">
+			<p class="navi_title f_15">全站商品分類</p>
+			<div id="panelWrap">
+				<div id="scroller">
+					<ul class="panel_list f_17">
+						<li class="navi_red"><a href="/Mobile/Dept.aspx?cid=38920">電視購物</a></li><li class="navi_red"><a href="/Mobile/Dept.aspx?cid=36885">快速到貨</a></li><li class="navi_purple"><a href="/Mobile/Dept.aspx?cid=31133">美妝</a></li><li class="navi_green"><a href="/Mobile/Dept.aspx?cid=31149">保健</a></li><li class="navi_pink"><a href="/Mobile/Dept.aspx?cid=30627">內塑衣</a></li><li class="navi_pink"><a href="/Mobile/Dept.aspx?cid=34980">服飾</a></li><li class="navi_pink"><a href="/Mobile/Dept.aspx?cid=30625">鞋包</a></li><li class="navi_brown"><a href="/Mobile/Dept.aspx?cid=30591">精品珠寶</a></li><li class="navi_blue"><a href="/Mobile/Dept.aspx?cid=31138">3C</a></li><li class="navi_blue"><a href="/Mobile/Dept.aspx?cid=31402">家電</a></li><li class="navi_blue"><a href="/Mobile/Dept.aspx?cid=31132">手機相機</a></li><li class="navi_green"><a href="/Mobile/Dept.aspx?cid=34954">美食</a></li><li class="navi_life"><a href="/Mobile/Dept.aspx?cid=33598">居家</a></li><li class="navi_life"><a href="/Mobile/Dept.aspx?cid=33604">婦幼</a></li><li class="navi_life"><a href="/Mobile/Dept.aspx?cid=33297">運動│車</a></li><li class="navi_life"><a href="/Mobile/Dept.aspx?cid=31974">傢俱寢飾</a></li>
+					</ul>
+					<!--End panel_list-->
+				</div>
+			</div>
+		</div>
+		<!--End panel-->
+	</div>
+
+	<div class="side sideRight">
+		<p class="navi_title f_15">會員服務</p>
+		<ul class="memberService">
+			<li>
+			
+				<a href="/Mobile/Login.aspx" data-ajax="false">會員登入/註冊</a>
+			
+			</li>
+			<li><a href="/Mobile/Pages/UserInformation/UserAccountInformation.aspx" data-ajax="false">我的優惠&折價券兌換</a></li>
+			<li>
+				
+				
+				
+				<a href="/Mobile/Pages/UserInformation/ProductWish.aspx" data-ajax="false"><span>我的收藏</span> </a>
+				
+				
+			
+			</li>
+			<li><a href="#">修改個人資料</a></li>
+			<li><a href="#">修改登入密碼</a></li>
+			<li><a href="#">收貨地址管理</a></li>
+		</ul>
+		<p class="navi_title f_15">其他</p>
+		<ul class="otherService">
+			<li><a href="/mobile/Pages/Marketing/Discount.aspx?sc=00527752&nomo=1" data-ajax="false">切換至電腦版</a></li>
+			<li><a href="/Mobile/Help.aspx?For=Shopping" data-ajax="false">用戶指南</a></li>
+
+			
+			
+		</ul>
+	</div>
+	</div>
+	
+<input type="hidden" id="Prod_ContentUC1_ControlKey" value="Whut2+yQe+xmf1JucZS9dNmiq71EVgupxVW0Ncbm/EkjUh5RtQkuDPvQHON5iGgv" />
+
+
+	
+	<!-- Google Order Track Code -->
+	
+<script type="text/javascript">
+	var _gaq = _gaq || [];
+	_gaq.push(['_setAccount', 'UA-15606512-1']);
+	_gaq.push(['_setDomainName', 'u-mall.com.tw']);
+	_gaq.push(['_trackPageview']);
+	(function () {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	})();
+</script>
+<script src="/Include/js/Umall.eTool.js" type="text/javascript"></script>
+
+
+
+	<div id="side_left_click"></div>
+	<div id="side_right_click"></div>
+
+</body>
+</html>

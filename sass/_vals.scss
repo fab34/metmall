@@ -1,0 +1,43 @@
+@mixin pie-clearfix {
+	&:after {
+	    content: "";
+	    display: table;
+	    clear: both; 
+	}
+	*zoom: 1;
+}
+
+@mixin border-box-sizing {
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+			box-sizing: border-box;
+}
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+       -o-border-radius: $radius;
+          border-radius: $radius;
+}
+
+$img-path: "../images/icon";
+//$img-path: "/mobile/images/icon";
+$gray-l: #efefef;
+$black-d: #111111;
+$black-m: #333333;
+$black-l: #666666;
+$black-t: #362e2b;
+
+$wht: #fff;
+$red-g: #f01400;
+$purple: #ef66fe;
+//$pink: #ff6666;
+$pink: hsla(334,100%,44%,1);
+$brown: #886643;
+$blue: #3366ff;
+$skyblue:hsla(200,100%,50%,1);
+$chrome:hsla(36,100%,50%,1);
+$cyan:hsla(170,100%,40%,1);
+$green: #88bb00;
+$life: #ff9900;

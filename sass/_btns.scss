@@ -1,0 +1,17 @@
+.header_btn_left, .header_btn_right {
+	position:absolute;
+	width:45px;
+	height:38px;
+	top:0;
+	cursor:pointer;
+}
+.header_btn_left {
+	left:0;
+	//border-right:1px solid lighten($pink, 10%);
+	background:url(#{$img-path}/icon.png) 0 -273px no-repeat;
+}
+.header_btn_right {
+	right:1px;
+	//border-right:1px solid lighten($pink, 10%);
+	background:url(#{$img-path}/icon.png) 0 -312px no-repeat;
+}

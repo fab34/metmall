@@ -1,0 +1,523 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1, user-scalable=no">
+<title>東森購物網行動版</title>
+<link rel="stylesheet" type="text/css" href="css/mobile.css">
+<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="js/iscroll-lite.js"></script>
+<script type="text/javascript" src="js/umallmobile.js"></script>
+</head>
+
+<body>
+	<div class="page">
+		<div class="main"> 
+		<div class="headerZone">
+			<div class="header t_center f_20 f_w">
+				<a href="/" target="_self">東森購物網</a>
+				<div class="header_btn_left"></div>
+				<div class="header_btn_right"></div>
+			</div>
+		</div>
+
+	<script type="text/javascript">
+		var addToHomeConfig = { animationIn: 'bubble', animationOut: 'bubble', returningVisitor: true, expire: 720 };
+
+		var KwLimit = function () {
+			if ($('#txtSearchKeyword').val().length < 1 || $('#txtSearchKeyword').val().length > 96) {
+			}
+			else {
+				var qstring = "";
+				if ($('#txtSearchKeyword').val() != $('#txtSearchKeyword').attr('placeholder')) {
+					qstring = "/Mobile/Search.aspx?keyword=" + encodeURIComponent($('#txtSearchKeyword').val());
+				}
+				else {
+					qstring = "/Mobile/Search.aspx?keyword=" + qstring;
+				}
+				window.location = qstring;
+			}
+		}
+	</script>
+
+			<div id="wrapper">
+				<div class="mainWrap">
+					<div style="margin: 2px 0 0 0;height:1px;"></div>
+					<div class="mainWrap_c">
+						<div class="member_box" style="max-width:800px;margin:20px auto;border:none;background-color:none;"><img src="images/icon/800x200_0522.jpg"></div>
+						<div class="pc_title_text2">填寫會員資料</div>
+						<div class="member_box">
+							<div class="memberbc">
+								<span class="w30">Email</span>
+								<span class="w70"><input type="text" id="email" placeholder="此為日後登入帳號" class="validate[required]" maxlength="64"></span>
+								<div class="memberInput t_left f_basic errMsg" id="emailErrMsg">請輸入您的Email</div>
+								<div class="clear"></div>
+							</div>
+							<div class="memberbc">
+								<span class="w30">密 碼</span>
+								<span class="w70"><input type="password" placeholder="請輸入6-12字元英數混合密碼" id="password" maxlength="12"></span>
+								<div class="memberInput t_left f_basic errMsg" id="passwordErrMsg">請輸入您的密碼</div>
+								<div class="clear"></div>
+							</div>
+							<div class="memberbc">
+								<span class="w30">確認密碼</span>
+								<span class="w70"><input type="password" id="cofirmpassword" placeholder="請再輸入一次密碼" class="validate[required]" maxlength="12"></span>
+								<div class="memberInput t_left f_basic errMsg" id="cofirmpasswordErrMsg">兩次密碼未一致，請重新輸入</div>
+								<div class="clear"></div>
+							</div>
+							<div class="memberbc">
+								<span class="w30">姓 名</span>
+								<span class="w70"><input type="text" placeholder="請輸入中文姓名" id="name" ></span>
+								<div class="memberInput t_left f_basic errMsg" id="nameErrMsg">請輸入您的中文姓名</div>
+								<div class="clear"></div>
+							</div>
+							<div class="memberbc">
+								<span class="w30">手機號碼</span>
+								<span class="w70"><input type="text" class="validate[required]" id="cellphone" maxlength="10"></span>
+								<div class="memberInput t_left f_basic errMsg" id="cellphoneErrMsg">請輸入您的手機號碼</div>
+								<div class="clear"></div>
+							</div>
+							<div class="memberbc">
+								<span class="w30">驗  證  碼</span>
+								<span class="w70"><input id="txtCode" name="txtCode" type="text" class="ValidateInput" required maxlength="6" autocomplete="off" placeholder="請輸入圖片中6位數字" /></span>
+								<span class="w30">&nbsp;</span>
+								<span class="w70"><img alt="請輸入圖片中6位數字" style="cursor: pointer;" id="checkCodePic" onclick="ImageChange();" src="img/2014-04-11.png" height="40"><a href="javascript:void(0)" onclick="ImageChange();" class="logincodechange" style="display:inline-block;margin-left:2px;text-decoration:underline;">更新驗證碼</a></span>
+								<div class="memberInput t_left f_basic errMsg" id="txtCodeErrMsg">請輸入驗證碼</div>
+								<div class="clear"></div>
+							</div>
+							<div class="memberbc">
+								<input id="chkPrivacy" name="chkPrivacy" type="checkbox" onclick="OnChkAgreeOrPrivacy();" checked="checked" style="float:left;">
+								<div style="float:left;">我同意並願意遵守<a href="/Mobile/Pages/UserGuide/NewUser.aspx?g=2">會員購物服務條款</a></div>
+								<div class="clear"></div>
+								
+							</div>
+						</div>
+						<div class="member_box">
+							<div class="memberbc">
+								建議填寫以下資料，可於生日月份收到生日專屬折價卷或其他行銷優惠哦！<br>
+								性別
+								<form id="form1" name="form1" method="post" style="display:inline;">
+									<label class="mbc_label" for="gender1"><input type="radio" name="gender" id="gender1" value="1">男</label>
+									<label class="mbc_label" for="gender2"><input type="radio" name="gender" id="gender2" value="2">女</label>
+								</form>
+							</div>
+							<div class="memberbc">
+								<span>出生日期</span>
+								<span>
+									<div class="block_select6">
+										<select id="year" name="year" >
+										</select>
+									</div>
+									<div class="block_select7">
+										<select name="month" id="month">
+										</select>
+									</div>
+									<div class="block_select7">
+										<select name="date" id="date">
+										</select>
+									</div>
+								</span>
+								<div class="clear"></div>
+							</div>
+						</div>
+						<div class="cartbtn">
+							<div class="cartbutton" id="cartbutton3"><a href="javascript:void(0);" onclick="registerMember();">同意註冊</a></div>
+						</div>
+						<div class="clear" style="height: 20px;"></div>
+					</div>
+<script src="/Include/js/calendar.js" type="text/javascript"></script>
+<script language="javascript" type="text/javascript">
+	//  依年份取得一個月有幾天
+
+
+	$(document).ready(function () {
+		jQuery(".errMsg").hide();
+		jQuery("#joinMemberErrMsg").hide();
+
+		jQuery("#email").change(function (event) {
+			var result = validation("email");
+			if (result == true) {
+				var param = JSON.stringify({ strAccount: jQuery(this).val() });
+				var dt = AjaxGetData('/Componects/OpenId.asmx/CheckAccount', param, false, false, null, false);
+
+				if (dt != null) {
+					if (dt.result != true) {
+						validMsg("email", dt.msg, false);
+					}
+					else {
+						validMsg("email", "", true);
+					}
+				} else {
+					alert("系統忙碌，請稍後再試");
+					return false;
+				}
+			} else {
+				validMsg("email", result, false);
+			}
+		});
+
+		jQuery("#password").change(function (event) {
+			checkpassword("password", "cofirmpassword");
+		});
+
+		jQuery("#cofirmpassword").change(function (event) {
+			checkpassword("password", "cofirmpassword");
+		});
+
+		jQuery("#name").change(function (event) {
+			var result = validation("name");
+			if (result == true) {
+				validMsg("name", "", result);
+			} else {
+				validMsg("name", result, false);
+			}
+		});
+
+		jQuery("#cellphone").change(function (event) {
+			var result = validation("cellphone");
+			if (result == true) {
+				var param = JSON.stringify({ strCellPhone: jQuery(this).val() });
+				var dt = AjaxGetData('/Componects/OpenId.asmx/CheckCellPhone', param, false, false, null, false);
+
+				if (dt != null) {
+					if (dt.result != true) {
+						validMsg("cellphone", dt.msg, result);
+					}
+					else {
+						validMsg("email", "", true);
+					}
+				} else {
+					alert("系統忙碌，請稍後再試");
+					return false;
+				}
+			} else {
+				validMsg("cellphone", result, false);
+			}
+		});
+
+		jQuery("#year").change(function () {
+			if (jQuery("#year").find(':selected').val() != "0") {
+				fillMonth("month");
+				fillDay("year", "month", "date");
+			} else {
+				jQuery("#month").html("");
+				jQuery("#date").html("");
+			}
+		});
+
+		jQuery("#month").change(function () {
+			fillDay("year", "month", "date");
+		});
+
+		//將日期寫入年月日下拉選單
+		fillCalendar("year", "month", "date");
+
+		if (varTitle != null || varTitle != "") {
+			jQuery("#title").append(varTitle);
+		}
+		//使用OpenID帳號註冊，帳號更改為不可以修改
+		var FBEmail = "";
+		if (FBEmail.length > 0) {
+			jQuery("#email").val(FBEmail);
+			jQuery("#email").attr("disabled", "disabled");
+		}
+
+		//registerType 1:一般會員註冊
+		//registerType 2:電視會員註冊
+		//registerType 3:FB會員註冊
+		//registerType 31:FB簡易會員登入
+		//registerType 4:FB員登入(使用電視轉網路會員)
+
+		if (registerType == 2 || registerType == 4) {
+			SettingTVMemeberData();
+		}
+		if (registerType == 31) {
+			SettingFBQuickMemeberData();
+		}
+	});
+
+	//確認密碼跟輸入密碼
+	function checkpassword(password, cofirmpassword) {
+		var result = validation(cofirmpassword);
+		if (result == true) {
+			validMsg(cofirmpassword, "", result);
+		} else {
+			validMsg(cofirmpassword, result, false);
+		}
+		result = validation(password);
+		if (result == true) {
+			validMsg(password, "", result);
+		} else {
+			validMsg(password, result, false);
+		}
+
+	}
+
+	function registerMember() {
+		jQuery(".errMsg").hide();
+		jQuery("#joinMemberErrMsg").hide();
+
+		/**引用此Controller ， 必須在頁面上設定註冊的類型(registerType)
+		1.一般註冊
+		2.OpenID註冊
+		3.電視會員註冊
+		**/
+		if (registerType == null || registerType.length == 0) {
+			alert("系統忙碌", "系統忙碌，無法判斷註冊類型，請通知管理員");
+			return false;
+		}
+
+		if (jQuery("#chkNotAgree").attr("checked") == true &&
+				jQuery("#chkAgreeClauses").attr("checked") == false &&
+				jQuery("#chkMemberDataUse").attr("checked") == false) {
+			return false;
+		}
+		var isvalidation = true;
+		var tagcolltion = new Array();
+		tagcolltion = ["txtCode", "cellphone", "name", "cofirmpassword", "password", "email"];
+		for (i = 0; i < tagcolltion.length; i++) {
+			var result = validation(tagcolltion[i]);
+			if (result != true) {
+				validMsg(tagcolltion[i], result, false);
+				isvalidation = false;
+			}
+			else {
+
+				if (tagcolltion[i] == "email") {
+					var param = JSON.stringify({ strAccount: jQuery("#" + tagcolltion[i]).val() });
+					var dt = AjaxGetData('/Componects/OpenId.asmx/CheckAccount', param, false, false, null, false);
+
+					if (dt != null) {
+						if (dt.result != true) {
+							validMsg("email", dt.msg, false);
+							isvalidation = false;
+						}
+					} else {
+						isvalidation = false;
+						alert("系統忙碌，請稍後再試");
+						return false;
+					}
+				}
+				else if (tagcolltion[i] == "cellphone") {
+					var param = JSON.stringify({ strCellPhone: jQuery("#" + tagcolltion[i]).val() });
+					var dt = AjaxGetData('/Componects/OpenId.asmx/CheckCellPhone', param, false, false, null, false);
+
+					if (dt != null) {
+						if (dt.result != true) {
+							isvalidation = false;
+							validMsg("cellphone", dt.msg, result);
+
+							window.location.href = "/mobile/Pages/Register/UserRegisterEndPage.aspx";
+
+						}
+					} else {
+						isvalidation = false;
+						alert("系統忙碌，請稍後再試");
+						return false;
+					}
+				}
+			}
+		}
+
+		if (jQuery('#chkPrivacy').is(":checked")) {
+			if (isvalidation == true && jQuery('#chkPrivacy').is(":checked")) {
+				var param = settingparam();
+				var dt = AjaxGetData('/Componects/OpenId.asmx/MemeberRegister', param, false, false, null, false);
+
+				if (dt != null) {
+					if (dt.result == true) {
+						//alert("完成會員註冊。");
+						window.location.href = "/mobile/Pages/Register/UserRegisterEndPage.aspx";
+					} else {
+						alert(dt.msg);
+					}
+				}
+			}
+		}
+		else {
+			jQuery("#joinMemberErrMsg").show();
+		}
+	}
+
+	function settingparam() {
+
+		var birthday = "";
+		if ($("#year").val() == "0") {
+			birthday = "1900/1/1";
+		}
+		else {
+			birthday = $("#year").val() + "/" + $("#month").val() + "/" + $("#day").val();
+		}
+
+		var gendar = $('input[name=RadioGroup1]:checked').val();
+		return JSON.stringify({ "info": {
+			AccountName: jQuery("#email").val(),
+			Password: jQuery("#password").val(),
+			CheckPassWord: jQuery("#cofirmpassword").val(),
+			UserName: jQuery("#name").val(),
+			Diminutive: "",
+			Birthday: birthday,
+			City: "",
+			District: "",
+			AddressDetail: jQuery("#txtAddressDetail").val(),
+			Email: jQuery("#email").val(),
+			CheckEmail: jQuery("#email").val(),
+			CellPhone: jQuery("#cellphone").val(),
+			PhoneArea: "",
+			Phone: "",
+			PhoneExt: "",
+			Gender: gendar,
+			Validcode: jQuery("#txtCode").val(),
+			RegisterType: registerType,
+			LoginType: "0",
+			IndividualID: "",
+			IsFacebookTVRegister: "False",
+			FacebookEmail: ""
+		}
+		});
+	}
+
+	function OnChkNotAgree() {
+		if (jQuery("#chkNotAgree").attr("checked") || jQuery("#chkNotAgree1").attr("checked")) {
+
+			jQuery("#chkAgreeClauses").attr("checked", "");
+			jQuery("#chkPrivacy").attr("checked", "");
+			jQuery("#chkAgreeClauses").attr("disabled", "disabled");
+			jQuery("#chkPrivacy").attr("disabled", "disabled");
+			jQuery("#chkMemberDataUse").attr("checked", "");
+			jQuery("#chkMemberDataUse").attr("disabled", "disabled");
+			jQuery("#btnApply").attr("disabled", "disabled");
+
+		}
+		else {
+			jQuery("#chkAgreeClauses").attr("disabled", "");
+			jQuery("#chkPrivacy").attr("disabled", "");
+			jQuery('#chkMemberDataUse').attr("disabled", "")
+		}
+	};
+
+	function OnChkAgreeOrPrivacy() {
+		if (jQuery("#chkTotalClick").attr("checked")) {
+			jQuery("#chkNotAgree").attr("checked", "");
+			jQuery("#chkAgreeClauses").attr("checked", "checked");
+			jQuery("#chkMemberDataUse").attr("checked", "checked");
+		}
+		else {
+			jQuery("#chkNotAgree").attr("checked", "checked");
+			jQuery("#chkAgreeClauses").attr("checked", "");
+			jQuery("#chkMemberDataUse").attr("checked", "");
+		}
+		if (!jQuery("#chkNotAgree").attr("checked") &&
+				jQuery("#chkAgreeClauses").attr("checked") &&
+				jQuery("#chkMemberDataUse").attr("checked")) {
+			jQuery("#btnApply").attr("disabled", "");
+			jQuery("#btnApply").css({ "color": "#FFFFFF", "cursor": "pointer" })
+								.hover(function () { jQuery(this).css({ "color": "Yellow" }) },
+										function () { jQuery(this).css({ "color": "#FFFFFF" }) });
+
+		}
+		else {
+			jQuery("#btnApply").attr("disabled", "disabled");
+			jQuery("#btnApply").css({ "color": "#CCCCCC", "cursor": "text" });
+		}
+	}
+
+
+
+</script>
+
+
+<!--mobiscroll Includes-->
+					
+<div class="copyright">
+	<a href="/Mobile/Pages/Register/RegisterWebMemberData.aspx?nomo=1" data-ajax="false">電腦版</a> <span>&nbsp;|</span>
+	<a href="/Mobile/Pages/UserGuide/NewUser.aspx?g=2" data-ajax="false">服務條款</a> <span>&nbsp;|</span>
+	<a href="/Mobile/Pages/UserGuide/NewUser.aspx?g=3" data-ajax="false">隱私權政策</a><br />
+	東森百貨股份有限公司 版權所有
+</div>
+
+				</div>
+			</div>
+		</div>
+		
+	<div class="side sideLeft">
+		<div class="panel">
+			<p class="navi_title f_15">全站商品分類</p>
+			<div id="panelWrap">
+				<div id="scroller">
+					<ul class="panel_list f_17">
+						<li class="navi_red"><a href="/Mobile/Dept.aspx?cid=38920">電視購物</a></li><li class="navi_red"><a href="/Mobile/Dept.aspx?cid=36885">快速到貨</a></li><li class="navi_purple"><a href="/Mobile/Dept.aspx?cid=31133">美妝</a></li><li class="navi_green"><a href="/Mobile/Dept.aspx?cid=31149">保健</a></li><li class="navi_pink"><a href="/Mobile/Dept.aspx?cid=30627">內塑衣</a></li><li class="navi_pink"><a href="/Mobile/Dept.aspx?cid=34980">服飾</a></li><li class="navi_pink"><a href="/Mobile/Dept.aspx?cid=30625">鞋包</a></li><li class="navi_brown"><a href="/Mobile/Dept.aspx?cid=30591">精品珠寶</a></li><li class="navi_blue"><a href="/Mobile/Dept.aspx?cid=31138">3C</a></li><li class="navi_blue"><a href="/Mobile/Dept.aspx?cid=31402">家電</a></li><li class="navi_blue"><a href="/Mobile/Dept.aspx?cid=31132">手機相機</a></li><li class="navi_green"><a href="/Mobile/Dept.aspx?cid=34954">美食</a></li><li class="navi_life"><a href="/Mobile/Dept.aspx?cid=33598">居家</a></li><li class="navi_life"><a href="/Mobile/Dept.aspx?cid=33604">婦幼</a></li><li class="navi_life"><a href="/Mobile/Dept.aspx?cid=33297">運動│車</a></li><li class="navi_life"><a href="/Mobile/Dept.aspx?cid=31974">傢俱寢飾</a></li>
+					</ul>
+					<!--End panel_list-->
+				</div>
+			</div>
+		</div>
+		<!--End panel-->
+	</div>
+
+	<div class="side sideRight">
+		<p class="navi_title f_15">會員服務</p>
+		<ul class="memberService">
+			<li>
+			
+				<a href="/Mobile/Login.aspx" data-ajax="false">會員登入/註冊</a>
+			
+			</li>
+			<li><a href="/Mobile/Pages/UserInformation/UserAccountInformation.aspx" data-ajax="false">我的優惠&折價券兌換</a></li>
+			<li>
+				
+				
+				
+				<a href="/Mobile/Pages/UserInformation/ProductWish.aspx" data-ajax="false"><span>我的收藏</span> </a>
+				
+				
+			
+			</li>
+		</ul>
+		<p class="navi_title f_15">其他</p>
+		<ul class="otherService">
+			<li><a href="/Mobile/Pages/Register/RegisterWebMemberData.aspx?nomo=1" data-ajax="false">切換至電腦版</a></li>
+			<li><a href="/Mobile/Help.aspx?For=Shopping" data-ajax="false">用戶指南</a></li>
+
+			
+			
+		</ul>
+	</div>
+	</div>
+
+	
+	<!-- Google Order Track Code -->
+	
+<script type="text/javascript">
+<!--
+	var _gaq = _gaq || [];
+	_gaq.push(['_setAccount', 'UA-15606512-1']);
+	_gaq.push(['_trackPageview']);
+	(function () {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? ' https://ssl' : ' http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	})();
+//-->
+</script>
+<script type="text/javascript">
+/* <![CDATA[ */
+	var google_conversion_id = 981159607;
+	var google_custom_params = window.google_tag_params;
+	var google_remarketing_only = true;
+/* ]]> */
+</script>
+<script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js"></script>
+<noscript>
+	<div style="display: inline;">
+		<img height="1" width="1" style="border-style: none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/981159607/?value=0&amp;guid=ON&amp;script=0" />
+	</div>
+</noscript>
+<script src="/Include/js/Umall.eTool.js" type="text/javascript"></script>
+
+	<div id="side_left_click">
+	</div>
+	<div id="side_right_click">
+	</div>
+</body>
+</html>

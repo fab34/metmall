@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1, user-scalable=no">
+<title>東森購物網行動版</title>
+<link rel="stylesheet" type="text/css" href="css/mobile.css">
+<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="js/iscroll-lite.js"></script>
+<script type="text/javascript" src="js/umallmobile.js"></script>
+</head>
+<body>
+
+<form method="post" action="FacebookRegisterType.aspx" id="Form1" data-ajax="false">
+<div class="aspNetHidden">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKMTMwMjA5MjcyOGRkODFRmKJEH5HUC1kUwQU7UtEtNgk=" />
+</div>
+
+<div class="page">
+	<div class="main">
+		<div class="headerZone">
+			<div class="header t_center f_20 f_w">
+				<a href="/" target="_self">東森購物網</a>
+				<div class="header_btn_left"></div>
+				<div class="header_btn_right"></div>
+			</div>
+		</div>
+
+	<script type="text/javascript">
+		var addToHomeConfig = { animationIn: 'bubble', animationOut: 'bubble', returningVisitor: true, expire: 720 };
+
+		var KwLimit = function () {
+			if ($('#txtSearchKeyword').val().length < 1 || $('#txtSearchKeyword').val().length > 96) {
+			}
+			else {
+				var qstring = "";
+				if ($('#txtSearchKeyword').val() != $('#txtSearchKeyword').attr('placeholder')) {
+					qstring = "/Mobile/Search.aspx?keyword=" + encodeURIComponent($('#txtSearchKeyword').val());
+				}
+				else {
+					qstring = "/Mobile/Search.aspx?keyword=" + qstring;
+				}
+				window.location = qstring;
+			}
+		}
+	</script>
+
+			<div id="wrapper">
+				<div class="mainWrap">
+					<div style="margin:2px 0 0 0;height:1px;"></div>
+					<div class="mainWrap_c">
+						<div class="pc_title_text2">facebook帳號登入</div>
+						<div class="pc_title_text2" id="cookiesDisabledWarning" style="display: none;">必須開啟瀏覽器Cookie設定才能登入會員！</div>
+						<div class="member_box">
+							<div class="memberbc">
+								<div id="fblogin">
+									<span class="w10"><input type="radio" id="rdoCombinAccount" value="2" name="openid" checked="checked"></span>
+									<label for="rdoCombinAccount">
+										<span class="w90">
+											已是東森購物網的會員<br>
+											輸入東森會員帳號進行綁定<br>
+											(同步享有原帳號優惠)<br>
+											<div class="clear" style="height:5px;"></div>
+											<span style="width:80px;">會員帳號</span><input type="text" style="width:180px;" id="txtAccount" name="txtAccount"placeholder="請輸入您的帳號" class="validate[required]" maxlength="64">
+											<div class="clear"></div>
+											<a href="/mobile/Pages/Login/ForgetMe.aspx" class="f_14" style="padding-left:188px;border-bottom:0;text-decoration:underline;">忘記帳號？</a>
+											<div class="t_left f_basic errMsg" style="padding-left:80px;line-height:20px;" id="errAccount">請輸入您的會員帳號</div>
+											<div class="clear"></div>
+											<span style="width:80px;">會員密碼</span><input type="password" style="width:180px;" id="txtPassword" name="password" placeholder="請輸入您的密碼" maxlength="12">
+											<div class="clear"></div>
+											<a href="/mobile/Pages/Login/ForgetPassword.aspx" class="f_14" style="padding-left:188px;border-bottom:0;text-decoration:underline;">忘記密碼？</a>
+											<div class="t_left f_basic errMsg" style="padding-left:80px;line-height:16px;" id="errPassword">請輸入您的會員密碼</div>
+										</span>
+									</label>
+								</div>
+								<div class="clear"></div>
+							</div>
+						</div>
+						<div class="member_box">
+							<div class="memberbc">
+								<span class="w10"><input type="radio" id="rdoTvMemberToFB" value="4" name="openid"></span>
+								<label for="rdoTvMemberToFB">
+									<span class="w90">
+										我曾經在東森購物台消費過，已是電視購物會員<br />
+										(設定網站帳號，可同步電視會員優惠)
+									</span>
+								</label>
+								<div class="clear"></div>
+							</div>
+						</div>
+						<div class="member_box">
+							<div class="memberbc">
+								<span class="w10"><input type="radio" id="rdoRegisterNew" value="3" name="openid"></span>
+								<label for="rdoRegisterNew">
+									<span class="w90">
+										同時註冊為新會員<br />
+										(可享有折價券和折扣金等優惠)
+									</span>
+								</label>
+								<div class="clear"></div>
+							</div>
+						</div>
+						<div class="cartbtn">
+							<div class="cartbutton" id="cartbutton3"><a href="javascript:void(0);" onclick="btnsubmit();">確認送出</a></div>
+						</div>
+						<div class="clear" style="height: 20px;">
+						</div>
+					</div>
+					
+<div class="copyright">
+	<a href="/mobile/Pages/register/FacebookRegisterType.aspx?nomo=1" data-ajax="false">電腦版</a> <span>&nbsp;|</span>
+	<a href="/Mobile/Pages/UserGuide/NewUser.aspx?g=2" data-ajax="false">服務條款</a> <span>&nbsp;|</span>
+	<a href="/Mobile/Pages/UserGuide/NewUser.aspx?g=3" data-ajax="false">隱私權政策</a><br />
+	東森百貨股份有限公司 版權所有
+</div>
+
+				</div>
+			</div>
+		</div>
+		
+	<div class="side sideLeft">
+		<div class="panel">
+			<p class="navi_title f_15">全站商品分類</p>
+			<div id="panelWrap">
+				<div id="scroller">
+					<ul class="panel_list f_17">
+						<li class="navi_red"><a href="/Mobile/Dept.aspx?cid=38920">電視購物</a></li><li class="navi_red"><a href="/Mobile/Dept.aspx?cid=36885">快速到貨</a></li><li class="navi_purple"><a href="/Mobile/Dept.aspx?cid=31133">美妝</a></li><li class="navi_green"><a href="/Mobile/Dept.aspx?cid=31149">保健</a></li><li class="navi_pink"><a href="/Mobile/Dept.aspx?cid=30627">內塑衣</a></li><li class="navi_pink"><a href="/Mobile/Dept.aspx?cid=34980">服飾</a></li><li class="navi_pink"><a href="/Mobile/Dept.aspx?cid=30625">鞋包</a></li><li class="navi_brown"><a href="/Mobile/Dept.aspx?cid=30591">精品珠寶</a></li><li class="navi_blue"><a href="/Mobile/Dept.aspx?cid=31138">3C</a></li><li class="navi_blue"><a href="/Mobile/Dept.aspx?cid=31402">家電</a></li><li class="navi_blue"><a href="/Mobile/Dept.aspx?cid=31132">手機相機</a></li><li class="navi_green"><a href="/Mobile/Dept.aspx?cid=34954">美食</a></li><li class="navi_life"><a href="/Mobile/Dept.aspx?cid=33598">居家</a></li><li class="navi_life"><a href="/Mobile/Dept.aspx?cid=33604">婦幼</a></li><li class="navi_life"><a href="/Mobile/Dept.aspx?cid=33297">運動│車</a></li><li class="navi_life"><a href="/Mobile/Dept.aspx?cid=31974">傢俱寢飾</a></li>
+					</ul>
+					<!--End panel_list-->
+				</div>
+			</div>
+		</div>
+		<!--End panel-->
+	</div>
+
+	<div class="side sideRight">
+		<p class="navi_title f_15">會員服務</p>
+		<ul class="memberService">
+			<li>
+			
+				<a href="/Mobile/Login.aspx" data-ajax="false">會員登入/註冊</a>
+			
+			</li>
+			<li><a href="/Mobile/Pages/UserInformation/UserAccountInformation.aspx" data-ajax="false">我的優惠&折價券兌換</a></li>
+			<li>
+				
+				
+				
+				<a href="/Mobile/Pages/UserInformation/ProductWish.aspx" data-ajax="false"><span>我的收藏</span> </a>
+				
+				
+			
+			</li>
+		</ul>
+		<p class="navi_title f_15">其他</p>
+		<ul class="otherService">
+			<li><a href="/mobile/Pages/register/FacebookRegisterType.aspx?nomo=1" data-ajax="false">切換至電腦版</a></li>
+			<li><a href="/Mobile/Help.aspx?For=Shopping" data-ajax="false">用戶指南</a></li>
+
+			
+			
+		</ul>
+	</div>
+	</div>
+</form>
+
+	
+<script type="text/javascript">
+	$(document).ready(function () {
+		jQuery("#txtAccount").change(function (event) {
+			if (jQuery(this).val() != "") {
+				jQuery("#errAccount").text("");
+
+			}
+		});
+
+		jQuery("#txtPassword").change(function (event) {
+			if (jQuery(this).val() != "") {
+				jQuery("#errPassword").text("");
+			}
+		});
+	});
+	function btnsubmit() {
+
+		var varFromURL = queryString("fromURL");
+		var radio = $('input[name=openid]:checked').val();
+		switch (radio) {
+			case '2':
+				var varAccount = jQuery("#txtAccount").val();
+				var varPassword = jQuery("#txtPassword").val();
+
+				if (varAccount.length < 1 || varPassword.length < 1) {
+					if (varAccount.length < 1) {
+						jQuery("#errAccount").text("請輸入您的帳號或Email");
+					}
+
+					if (varPassword.length < 1) {
+						jQuery("#errPassword").text("請輸入您的密碼");
+					}
+					return false;
+				}
+
+				var param = { account: varAccount, password: varPassword, openIdType: '0' };
+				var json = JSON_ToJsonString(param);
+				var dt = AjaxGetData('/Componects/OpenId.asmx/OpenIdCombinAccount', json, false, false, null, false);
+				if (dt != null) {
+					if (dt.result == true) {
+						alert("您已登入成功。");
+
+						if (varFromURL == null) {
+							window.location.href = dt.NextStep;
+						} else {
+							window.location.href = varFromURL;
+						}
+					} else {
+						alert(dt.msg);
+
+					}
+				}
+				break;
+			case '3':
+				//var param = JSON.stringify({ strAccount: value });
+				var dt = AjaxGetData('/Componects/OpenId.asmx/OpenIDCheckAccount', "", false, false, null, false);
+
+				if (dt != null) {
+					if (dt.result == true) {
+						var url = "../Register/FacebookRegisterStartPage.aspx";
+						if (varFromURL != null) {
+							url += "?fromUrl=" + varFromURL;
+						}
+
+						window.location.href = url;
+					} else {
+						alert(dt.msg + "，請使用會員帳號進行綁定");
+					}
+				}
+				break;
+			case '4':
+				window.location.href = "/Mobile/Pages/Register/UserRegisterStartPage.aspx";
+				break;
+
+		}
+	}
+
+	function clickradio(itemid) {
+		$('#' + itemid).attr('checked', 'checked');
+	}
+	</script>
+
+	<!-- Google Order Track Code -->
+	
+<script type="text/javascript">
+<!--
+	var _gaq = _gaq || [];
+	_gaq.push(['_setAccount', 'UA-15606512-1']);
+	_gaq.push(['_trackPageview']);
+	(function () {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? ' https://ssl' : ' http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	})();
+//-->
+</script>
+<script type="text/javascript">
+/* <![CDATA[ */
+	var google_conversion_id = 981159607;
+	var google_custom_params = window.google_tag_params;
+	var google_remarketing_only = true;
+/* ]]> */
+</script>
+<script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js"></script>
+<noscript>
+	<div style="display: inline;">
+		<img height="1" width="1" style="border-style: none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/981159607/?value=0&amp;guid=ON&amp;script=0" />
+	</div>
+</noscript>
+<script src="/Include/js/Umall.eTool.js" type="text/javascript"></script>
+
+	<div id="side_left_click">
+	</div>
+	<div id="side_right_click">
+	</div>
+</body>
+</html>

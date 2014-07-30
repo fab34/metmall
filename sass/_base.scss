@@ -1,0 +1,63 @@
+body {
+	font-style: inherit;
+	font-family: '微軟正黑體',arial;
+	color: #362E2B;
+	line-height: 180%;
+	background: $gray-l;
+	-webkit-text-size-adjust: none;
+}
+
+a {text-decoration:none;}
+a:focus, 
+a:hover, 
+a:active {text-decoration:none;}
+
+code, kbd, samp, tt {font-size: 100%;}
+input, button, textarea, select {*font-size: 100%; /*-webkit-appearance:none;*/}
+
+.clear {clear:both;}
+
+.t_center        { text-align:center; }
+.t_left          { text-align:left; }
+.t_right         { text-align:right; }
+.left            { float:left;}
+.right           { float:right; }
+img              { max-width:100%;vertical-align:middle;border:0; }
+
+/*-- FONT-SIZE --*/
+.f_12 {font-size:75%;}   /* for setting 9pt 12px 0.75em */
+.f_13 {font-size:80%;}   /* for setting 10pt 13px 0.8em */
+.f_14 {font-size:87.5%;} /* for setting 10.5pt 14px 0.875em */
+.f_15 {font-size:95%;}   /* for setting 11pt 15px 0.95em */
+.f_16 {font-size:100%;}  /* for setting 12pt 16px 1em */
+.f_17 {font-size:105%;}  /* for setting 13pt 17px 1.05em */
+.f_18 {font-size:112.5%;}/* for setting 13.5pt 18px 1.125em */
+.f_19 {font-size:120%;}  /* for setting 14pt 19px 1.2em */
+.f_20 {font-size:125%;}  /* for setting 14.5pt 20px 1.25em */
+.f_21 {font-size:130%;}  /* for setting 15pt 21px 1.3em */
+.f_22 {font-size:140%;}  /* for setting 16pt 22px 1.4em */
+.f_23 {font-size:145%;}  /* for setting 17pt 23px 1.45em */
+.f_24 {font-size:150%;}  /* for setting 18pt 24px 1.5em */
+.f_25 {font-size:155%;}  /* for setting 18pt 25px 1.55em */
+.f_26 {font-size:160%;}  /* for setting 20pt 26px 1.6em */
+.f_29 {font-size:180%;}  /* for setting 22pt 29px 1.8em */
+.f_32 {font-size:200%;}  /* for setting 24pt 32px 2em */
+.f_35 {font-size:220%;}  /* for setting 26pt 35px 2.2em */
+.f_36 {font-size:225%;}  /* for setting 27pt 36px 2.25em */
+.f_37 {font-size:230%;}  /* for setting 28pt 37px 2.3em  */
+.f_38 {font-size:235%;}  /* for setting 29pt 38px 2.35em */
+.f_40 {font-size:245%;}  /* for setting 30pt 40px 2.45em */
+.f_42 {font-size:255%;}  /* for setting 32pt 42px 2.55em */
+.f_45 {font-size:275%;}  /* for setting 34pt 45px 2.75em */
+.f_48 {font-size:300%;}  /* for setting 36pt 48px 3em */
+
+/*-- font Color --*/
+.f_basic	{ color:#f01400; }
+.f_web		{ color:#362e2b; }
+
+/*-- FONT --*/
+.fw_bold	{ font-weight:bold; }
+.fw_light	{ font-weight:lighter; }
+
+.td_unline	{ border-bottom: 1px solid #362e2b; }
+.td_through	{ text-decoration: line-through; }

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="initial-scale=1.0, maximum-scale=1">
+<title>東森購物網行動版</title>
+<link rel="stylesheet" type="text/css" href="css/mobile.css">
+<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="js/iscroll-lite.js"></script>
+<script type="text/javascript" src="js/umallmobile.js"></script>
+</head>
+
+<body>
+<div class="page">
+	<div class="main">
+		<div class="headerZone">
+			<div class="header t_center f_20 f_w">
+				<a href="index.html" target="_self">東森購物網</a>
+				<div class="header_btn_left"></div>
+				<div class="header_btn_right"></div>
+			</div>
+		</div>
+		<div id="wrapper">
+			<div class="mainWrap">
+				<div style="margin:2px 0 0 0;height:1px;"></div>
+				<div class="mainWrap_c">
+					<div class="cartstep"><img src="images/icon/cartstep1.png"></div>
+					<div class="product_content">
+						<div class="pc_title">商品明細</div>
+						<div class="pc_content">
+							<span id="prod_name">國國國國國國國國國國國國國國國國國國國國</span>
+							<span id="detail_spec_desc">
+								<div class="pccimg1"><img src="img/ex3.jpg"></div>
+								<div class="pccimg2">顏色：黑色<br>尺寸：M<br>數量：1件</div>
+							</span>
+							<div class="clear"></div>
+						</div>
+					</div>
+					<div class="product_content">
+						<div class="pc_title">金額明細</div>
+						<div class="pc_content3">
+							<div class="tprice" style="color:#a0a0a0;"><input type="radio" disabled> 優惠價 <span>$1,000,000</span></div>
+							<div class="tprice"><input type="radio" checked> 森活價 <span class="f_basic">$1,100,000</span></div>
+							<div>※非會員限使用森活價購物</div>
+						</div>
+						<div class="totalprice">結帳總金額<span class="totalpricec">$3,300,000</span></div>
+					</div>
+					<div class="product_content">
+						<div class="pc_title">付款方式</div>
+						<div class="pc_content">
+							<div class="block_select2">
+								<select>
+									<option>信用卡一次付清</option>
+								</select>
+							</div>
+						</div>
+					</div>
+					<div class="product_content">
+						<div class="pc_title">訂購人資料</div>
+						<div class="pc_content">
+							<div class="pcctext">
+								<div class="w25">訂購人</div>
+								<div class="w75"><input type="text"></div>
+							</div>
+							<div class="pcctext">
+								<div class="w25">行動電話</div>
+								<div class="w75"><input type="text"></div>
+							</div>
+							<div class="pcctext">
+								<div class="w25">電子信箱</div>
+								<div class="w75"><input type="text"></div>
+							</div>
+							<div class="clear"></div>
+						</div>
+					</div>
+					<div class="product_content">
+						<div class="pc_title">發票資訊</div>
+						<div class="pc_content">
+							<div id="invoice1" class="invoice">
+								<label for="invoice_1">
+									<input type="radio" name="invoice1" id="invoice_1">捐贈發票
+								</label>
+								<div class="block_select4">
+									<select id="invoice_1s">
+										<option value="1">東森慈善基金會</option>
+										<option value="2">輸入愛心碼</option>
+									</select>
+								</div>
+								<div class="clear"></div>
+								<div id="invoice1in">
+									<label></label>
+									<input type="text" placeholder="請輸入愛心碼">
+								</div>
+							</div>
+							<div class="clear"></div>
+							<div id="invoice2" class="invoice">
+								<label for="invoice_2">
+									<input type="radio" name="invoice1" id="invoice_2">紙本發票
+								</label>
+								<div id="invoice2in">
+									<div id="invoice3" class="invoice">
+										<label for="invoice_3">
+											<input type="radio" name="invoice2" id="invoice_3">兩聯式
+										</label>
+									</div>
+									<div id="invoice4" class="invoice">
+										<label for="invoice_4">
+											<input type="radio" name="invoice2" id="invoice_4">三聯式
+										</label>
+										<div id="invoice4in">
+											<input type="text" placeholder="請輸入公司發票抬頭">
+											<input type="text" placeholder="請輸入公司發票統編">
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="clear"></div>
+						</div>
+					</div>
+					<div class="product_content">
+						<div class="pc_title">收貨人資料</div>
+						<div class="pc_content">
+							<div class="pcctext"><label for="receipt"><input type="checkbox" id="receipt">同訂購人資料</label></div>
+							<div class="pcctext">
+								<div class="w25">收貨人</div>
+								<div class="w75"><input type="text"></div>
+							</div>
+							<div class="pcctext">
+								<div class="w25">行動電話</div>
+								<div class="w75"><input type="text"></div>
+							</div>
+							<div class="pcctext">
+								<div class="w25">收貨地址</div>
+								<div class="w75">
+									<div class="block_select3">
+										<select>
+											<option>請選擇</option>
+										</select>
+									</div>
+									<div class="block_select3">
+										<select>
+											<option>請選擇</option>
+										</select>
+									</div>
+									<input type="text" style="top:0;">
+								</div>
+							</div>
+							<div class="clear"></div>
+						</div>
+					</div>
+					<div class="cartbtn">
+						<div class="cartbutton"><a href="#">下一步：填寫付款資料</a></div>
+						<div class="cartbutton" id="cartbutton2"><a href="#">暫不結帳，把商品加入我的收藏</a></div>
+					</div>
+				</div>
+				<div class="copyright">
+					<a href="#">電腦版</a><span>|</span>服務條款<span>|</span>隱私權政策<br />
+				東森百貨股份有限公司 版權所有
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="side sideLeft">
+		<div class="panel">
+			<p class="navi_title f_15">全站商品分類</p>
+			<div id="panelWrap">
+				<ul class="panel_list f_17">
+					<li class="navi_red"><a href="#">電視購物</a></li>
+					<li class="navi_red"><a href="#">快速到貨</a></li>
+					<li class="navi_purple"><a href="#">美妝</a></li>
+					<li class="navi_green"><a href="#">保健</a></li>
+					<li class="navi_pink"><a href="#">內塑衣</a></li>
+					<li class="navi_pink"><a href="#">服飾</a></li>
+					<li class="navi_pink"><a href="#">鞋包</a></li>
+					<li class="navi_brown"><a href="#">精品珠寶</a></li>
+					<li class="navi_blue"><a href="#">3C</a></li>
+					<li class="navi_blue"><a href="#">家電</a></li>
+					<li class="navi_blue"><a href="#">手機相機</a></li>
+					<li class="navi_blue"><a href="#">旅遊</a></li>
+					<li class="navi_green"><a href="#">美食</a></li>
+					<li class="navi_life"><a href="#">居家</a></li>
+					<li class="navi_life"><a href="#">婦幼</a></li>
+					<li class="navi_life"><a href="#">運動│車</a></li>
+					<li class="navi_life"><a href="#">傢俱寢飾</a></li>
+				</ul><!--End panel_list-->
+			</div>
+		</div><!--End panel-->
+	</div>
+	<div class="side sideRight">
+		<p class="navi_title f_15">會員服務</p>
+		<ul class="memberService">
+			<li><a href="#">會員登入/註冊</a></li>
+			<li><a href="#">我的優惠&折價券兌換</a></li>
+			<li><a href="#">我的收藏</a></li>
+			<li><a href="#">修改個人資料</a></li>
+			<li><a href="#">修改登入密碼</a></li>
+			<li><a href="#">收貨地址管理</a></li>
+		</ul>
+		<p class="navi_title f_15">其他</p>
+		<ul class="otherService">
+			<li><a href="#">切換至電腦版</a></li>
+			<li><a href="#">用戶指南</a></li>
+			<li><a href="#">我要退貨</a></li>
+			<li><a href="#">聯繫客服</a></li>
+		</ul>
+	</div>
+</div>
+<div id="side_left_click"></div>
+<div id="side_right_click"></div>
+</body>
+</html>

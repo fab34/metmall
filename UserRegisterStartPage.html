@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1, user-scalable=no">
+<title>東森購物網行動版</title>
+<link rel="stylesheet" type="text/css" href="css/mobile.css">
+<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="js/iscroll-lite.js"></script>
+<script type="text/javascript" src="js/umallmobile.js"></script>
+</head>
+<body>
+	
+<form method="post" action="UserRegisterStartPage.aspx" id="Form1" data-ajax="false">
+<div class="aspNetHidden">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwULLTE2MDYxMDU4OTFkZAxm+mA+hl31H6l1TnT2wGcTYMJd" />
+</div>
+
+	<div class="page">
+		<div class="main">
+			
+		<div class="headerZone">
+			<div class="header t_center f_20 f_w">
+				<a href="/" target="_self">東森購物網</a>
+				<div class="header_btn_left"></div>
+				<div class="header_btn_right"></div>
+			</div>
+			
+		</div>
+
+	<script type="text/javascript">
+		var addToHomeConfig = { animationIn: 'bubble', animationOut: 'bubble', returningVisitor: true, expire: 720 };
+
+		var KwLimit = function () {
+			if ($('#txtSearchKeyword').val().length < 1 || $('#txtSearchKeyword').val().length > 96) {
+			}
+			else {
+				var qstring = "";
+				if ($('#txtSearchKeyword').val() != $('#txtSearchKeyword').attr('placeholder')) {
+					qstring = "/Mobile/Search.aspx?keyword=" + encodeURIComponent($('#txtSearchKeyword').val());
+				}
+				else {
+					qstring = "/Mobile/Search.aspx?keyword=" + qstring;
+				}
+				window.location = qstring;
+			}
+		}
+	</script>
+
+			<div id="wrapper">
+				<div class="mainWrap">
+					<div class="mainWrap_c" id="getVCode">
+						<div class="cartstep"><img src="images/icon/mstep1.png"></div>
+						<div class="pc_title_text2">電視會員身分驗證</div>
+						<div class="pc_title_text2 f_14">若您曾在東森購物台消費，為確保您個人資料全，請提供下列資料以確認會員身分</div>
+						<div class="member_box">
+							<div class="memberbc">
+								<span class="w30">身分證</span>
+								<span class="w70"><input type="text" id="individualID" name="individualID" autocomplete="off" class="validate[required]" maxlength="10"></span>
+								<div class="memberInput t_left f_basic errMsg" id="individualIDErrMsg">請輸入身分證字號</div>
+								<div class="clear"></div>
+							</div>
+							<div class="memberbc">
+								<span class="w30">手機號碼</span>
+								<span class="w70"><input type="text" id="cellphone" name="cellphone" autocomplete="off" maxlength="10"></span>
+								<div class="memberInput t_left f_basic errMsg" id="individualIDErrMsg">請輸入手機號碼</div>
+								<div class="clear"></div>
+							</div>
+						</div>
+						<div class="cartbtn">
+							<div class="cartbutton" id="cartbutton3"><a href="javascript:void(0);" onclick="getValidationCode();" id="getCellphoneCode">取得簡訊驗證碼</a></div>
+						</div>
+						<div class="clear" style="height: 20px;"></div>
+					</div>
+					<div class="mainWrap_c" id="chkVCode">
+						<div class="cartstep"><img src="images/icon/mstep2.png"></div>
+						<div class="pc_title_text2">填寫簡訊驗證碼</div>
+						<div class="member_box">
+							<div class="memberbc">
+								已發送驗證碼您的手機：<span id="cellphoneNum"></span>
+							</div>
+							<div class="memberbc">
+								<span class="w30">驗  證  碼</span>
+								<span class="w70"><input type="text" placeholder="請注意英文大小寫" id="cellvalidationcode" maxlength="5" /></span>
+								<span class="w30">&nbsp;</span><span class="w70" onclick="reSendSMS();" style="text-decoration:underline;">重新發送驗證碼</span>
+								<div class="clear"></div>
+							</div>
+						</div>
+						<div class="cartbtn">
+							<div class="cartbutton" id="cartbutton3"><a href="javascript:void(0);" onclick="btnSend();">下一步</a></div>
+							<div>如果持續收不到手機驗證碼，請撥客服電話0800-620-000</div>
+						</div>
+						<div class="clear" style="height:20px;"></div>
+					</div>
+					
+<div class="copyright">
+	<a href="/Mobile/Pages/Register/UserRegisterStartPage.aspx?nomo=1" data-ajax="false">電腦版</a> <span>&nbsp;|</span>
+	<a href="/Mobile/Pages/UserGuide/NewUser.aspx?g=2" data-ajax="false">服務條款</a> <span>&nbsp;|</span>
+	<a href="/Mobile/Pages/UserGuide/NewUser.aspx?g=3" data-ajax="false">隱私權政策</a><br />
+	東森百貨股份有限公司 版權所有
+</div>
+
+				</div>
+			</div>
+		</div>
+		
+	<div class="side sideLeft">
+		<div class="panel">
+			<p class="navi_title f_15">全站商品分類</p>
+			<div id="panelWrap">
+				<div id="scroller">
+					<ul class="panel_list f_17">
+						<li class="navi_red"><a href="/Mobile/Dept.aspx?cid=38920">電視購物</a></li><li class="navi_red"><a href="/Mobile/Dept.aspx?cid=36885">快速到貨</a></li><li class="navi_purple"><a href="/Mobile/Dept.aspx?cid=31133">美妝</a></li><li class="navi_green"><a href="/Mobile/Dept.aspx?cid=31149">保健</a></li><li class="navi_pink"><a href="/Mobile/Dept.aspx?cid=30627">內塑衣</a></li><li class="navi_pink"><a href="/Mobile/Dept.aspx?cid=34980">服飾</a></li><li class="navi_pink"><a href="/Mobile/Dept.aspx?cid=30625">鞋包</a></li><li class="navi_brown"><a href="/Mobile/Dept.aspx?cid=30591">精品珠寶</a></li><li class="navi_blue"><a href="/Mobile/Dept.aspx?cid=31138">3C</a></li><li class="navi_blue"><a href="/Mobile/Dept.aspx?cid=31402">家電</a></li><li class="navi_blue"><a href="/Mobile/Dept.aspx?cid=31132">手機相機</a></li><li class="navi_green"><a href="/Mobile/Dept.aspx?cid=34954">美食</a></li><li class="navi_life"><a href="/Mobile/Dept.aspx?cid=33598">居家</a></li><li class="navi_life"><a href="/Mobile/Dept.aspx?cid=33604">婦幼</a></li><li class="navi_life"><a href="/Mobile/Dept.aspx?cid=33297">運動│車</a></li><li class="navi_life"><a href="/Mobile/Dept.aspx?cid=31974">傢俱寢飾</a></li>
+					</ul>
+					<!--End panel_list-->
+				</div>
+			</div>
+		</div>
+		<!--End panel-->
+	</div>
+
+	<div class="side sideRight">
+		<p class="navi_title f_15">會員服務</p>
+		<ul class="memberService">
+			<li>
+			
+				<a href="/Mobile/Login.aspx" data-ajax="false">會員登入/註冊</a>
+			
+			</li>
+			<li><a href="/Mobile/Pages/UserInformation/UserAccountInformation.aspx" data-ajax="false">我的優惠&折價券兌換</a></li>
+			<li>
+				
+				
+				
+				<a href="/Mobile/Pages/UserInformation/ProductWish.aspx" data-ajax="false"><span>我的收藏</span> </a>
+				
+				
+			
+			</li>
+		</ul>
+		<p class="navi_title f_15">其他</p>
+		<ul class="otherService">
+			<li><a href="/Mobile/Pages/Register/UserRegisterStartPage.aspx?nomo=1" data-ajax="false">切換至電腦版</a></li>
+			<li><a href="/Mobile/Help.aspx?For=Shopping" data-ajax="false">用戶指南</a></li>
+
+			
+			
+		</ul>
+	</div>
+	</div>
+</form>
+
+	
+	<script type="text/javascript" language="javascript">
+		$(document).ready(function () {
+			jQuery("#chkVCode").hide();
+
+			jQuery("#cellphone").change(function (event) {
+				var result = validation("cellphone");
+				if (result == true) {
+					validMsg("cellphone", "", result);
+				} else {
+					validMsg("cellphone", result, false);
+				}
+			});
+
+			jQuery("#individualID").change(function (event) {
+
+				var str = jQuery(this).val();
+				str = str.toUpperCase();
+				jQuery(this).val(str);
+
+				var result = validation("individualID");
+				if (result == true) {
+					validMsg("individualID", "", result);
+				} else {
+					validMsg("individualID", result, false);
+				}
+			});
+		});
+
+		function reSendSMS() {
+			var isvalidation = true;
+			tagcolltion = ["cellphone", "individualID"];
+			for (i = 0; i < tagcolltion.length; i++) {
+				var result = validation(tagcolltion[i]);
+				if (result != true) {
+					validMsg(tagcolltion[i], result, false);
+					isvalidation = false;
+				}
+			}
+			if (isvalidation == false) {
+				//validMsg("cellvalidationcode", "", false);
+				alert("驗證失敗，請重新輸入資料取得驗證碼")
+				location.reload();
+				return false;
+			}
+
+			if (confirm("重新發送驗證碼到您的手機\n" + jQuery("#cellphone").val())) {
+				getValidationCode();
+			} else {
+				return false;
+			}
+		}
+
+		function getValidationCode() {
+
+			var varIndividualID = jQuery("#individualID").val();
+			var varCellphone = jQuery("#cellphone").val();
+			var param = JSON.stringify({ strIndividualID: varIndividualID, strCellPhone: varCellphone });
+
+			var dt = AjaxGetData('/Componects/OpenId.asmx/SendSMS', param, false, false, null, false);
+
+			if (dt != null) {
+				if (dt.result) {
+					//alert(dt.msg);
+
+					jQuery("#getVCode").hide();
+					jQuery("#cellphoneNum").text(jQuery("#cellphone").val());
+					jQuery("#chkVCode").show();
+				}
+				else {
+					alert(dt.msg);
+					//validMsg("getCellphoneCode", dt.msg, dt.result);
+				}
+			}
+		}
+
+		function btnSend() {
+
+			var isvalidation = true;
+			var tagcolltion = new Array();
+			tagcolltion = ["cellphone", "individualID", "cellvalidationcode"];
+			for (i = 0; i < tagcolltion.length; i++) {
+				var result = validation(tagcolltion[i]);
+				if (result != true) {
+					validMsg(tagcolltion[i], result, false);
+					isvalidation = false;
+				}
+			}
+
+			if (isvalidation == true) {
+				var valueID = jQuery("#individualID").val();
+				var valudCode = jQuery("#cellvalidationcode").val();
+				var param = JSON.stringify({ strIndividualID: valueID, strValidationCode: valudCode });
+				var dt = AjaxGetData('/Componects/OpenId.asmx/CheckUserIndividualIDAndSmsNo', param, false, false, null, false);
+
+				if (dt != null) {
+					if (dt.result == true) {
+						//alert("驗證成功。");
+						
+							var varFromURL = queryString("fromURL");
+							if (varFromURL == null) {
+								window.location.href = dt.NextStep;
+							} else {
+								window.location.href = dt.NextStep + "fromULR" + varFromURL;
+							}
+
+					} else {
+						jQuery("#cellvalidationcodeErrMsg").text(dt.msg);
+					}
+				}
+			}
+		}
+
+
+
+
+	</script>
+
+	<!-- Google Order Track Code -->
+	
+<script type="text/javascript">
+<!--
+	var _gaq = _gaq || [];
+	_gaq.push(['_setAccount', 'UA-15606512-1']);
+	_gaq.push(['_trackPageview']);
+	(function () {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? ' https://ssl' : ' http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	})();
+//-->
+</script>
+<script type="text/javascript">
+/* <![CDATA[ */
+	var google_conversion_id = 981159607;
+	var google_custom_params = window.google_tag_params;
+	var google_remarketing_only = true;
+/* ]]> */
+</script>
+<script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js"></script>
+<noscript>
+	<div style="display: inline;">
+		<img height="1" width="1" style="border-style: none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/981159607/?value=0&amp;guid=ON&amp;script=0" />
+	</div>
+</noscript>
+<script src="/Include/js/Umall.eTool.js" type="text/javascript"></script>
+
+	<div id="side_left_click">
+	</div>
+	<div id="side_right_click">
+	</div>
+</body>
+</html>
